@@ -1,4 +1,4 @@
-package com.elhady.trending.ui.main;
+package com.elhady.trending.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -10,7 +10,7 @@ import android.os.Bundle;
 
 import com.elhady.trending.R;
 import com.elhady.trending.model.TrendModel;
-import com.elhady.trending.ui.main.adapter.TrendAdapter;
+import com.elhady.trending.ui.adapter.TrendAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         trendViewModel.getRepository();
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        final TrendAdapter adapter = new TrendAdapter();
+        final TrendAdapter adapter = new TrendAdapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 

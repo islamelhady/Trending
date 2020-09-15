@@ -1,22 +1,29 @@
-package com.elhady.trending.ui.main.adapter;
+package com.elhady.trending.ui.adapter;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.elhady.trending.R;
 import com.elhady.trending.model.TrendModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHolder> {
 
+    private Context context;
+
+    public TrendAdapter(Context context) {
+        this.context = context;
+    }
 
     private ArrayList<TrendModel> trendsList = new ArrayList<>();
 
@@ -45,6 +52,7 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
 
         holder.starsTV.setText(trendsList.get(position).getStars()+"");
         holder.forksTV.setText(trendsList.get(position).getForks()+"");
+        Glide.with(context).load(trendsList.get(position).getAvatar()).into(holder.imageView);
 
     }
 
@@ -61,9 +69,11 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
 
 
     class TrendViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView ;
         TextView authorTV, nameTV,descriptionTV,languageTV,starsTV,forksTV;
         public TrendViewHolder(@NonNull View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.img_profile);
             authorTV = itemView.findViewById(R.id.author);
             nameTV = itemView.findViewById(R.id.name_reposotory);
             descriptionTV = itemView.findViewById(R.id.description);

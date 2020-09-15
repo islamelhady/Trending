@@ -1,4 +1,4 @@
-package com.elhady.trending.ui.main;
+package com.elhady.trending.ui.activity;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
