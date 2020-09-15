@@ -2,11 +2,12 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#00BCD4"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#00BCD4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_large">
@@ -54,80 +55,83 @@
             tools:text="name name name name" />
 
 
-        <TextView
-            android:id="@+id/description"
+        <RelativeLayout
+            android:id="@+id/expand_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_large"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginRight="@dimen/margin_large"
-            android:ellipsize="end"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:lineSpacingExtra="2dp"
-            android:maxLines="2"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/font_xmedium"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_profile"
-            tools:text="description description description description"/>
+            app:layout_constraintTop_toBottomOf="@id/author">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="2"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/font_xmedium"
+                tools:text="description description description description" />
 
 
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:drawableLeft="@drawable/ic_circle"
+                android:drawablePadding="11dp"
+                android:paddingStart="@dimen/margin_small"
+                android:paddingLeft="@dimen/margin_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                tools:text="C++" />
 
 
-        <TextView
-            android:id="@+id/language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:drawableLeft="@drawable/ic_circle"
-            android:drawablePadding="11dp"
-            android:paddingStart="@dimen/margin_small"
-            android:paddingLeft="@dimen/margin_small"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description"
-            tools:text="C++"/>
+            <TextView
+                android:id="@+id/stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_toRightOf="@id/language"
+                android:drawableLeft="@drawable/ic_star"
+                android:drawablePadding="11dp"
+                android:paddingStart="@dimen/margin_small_medium"
+                android:paddingLeft="@dimen/margin_small_medium"
+                android:paddingEnd="@dimen/margin_small_medium"
+                android:paddingRight="@dimen/margin_small_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/language"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                tools:text="stars 14.876" />
 
 
+            <TextView
+                android:id="@+id/forks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_toRightOf="@id/stars"
+                android:drawableLeft="@drawable/ic_fork"
+                android:drawablePadding="11dp"
+                android:paddingStart="@dimen/margin_small_medium"
+                android:paddingLeft="@dimen/margin_small_medium"
+                android:paddingEnd="@dimen/margin_xxlarge"
+                android:paddingRight="@dimen/margin_xxlarge"
+                tools:text="forks 67.76" />
 
-        <TextView
-            android:id="@+id/stars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:paddingStart="@dimen/margin_small_medium"
-            android:paddingLeft="@dimen/margin_small_medium"
-            android:paddingEnd="@dimen/margin_small_medium"
-            android:paddingRight="@dimen/margin_small_medium"
-            android:drawableLeft="@drawable/ic_star"
-            android:drawablePadding="11dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/language"
-            app:layout_constraintTop_toBottomOf="@+id/description"
-            tools:text="stars 14.876"/>
-
-
-
-
-        <TextView
-            android:id="@+id/forks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:paddingStart="@dimen/margin_small_medium"
-            android:paddingLeft="@dimen/margin_small_medium"
-            android:paddingEnd="@dimen/margin_xxlarge"
-            android:paddingRight="@dimen/margin_xxlarge"
-            android:drawableLeft="@drawable/ic_fork"
-            android:drawablePadding="11dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/stars"
-            app:layout_constraintTop_toBottomOf="@+id/description"
-            tools:text="forks 67.76"/>
-
+        </RelativeLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

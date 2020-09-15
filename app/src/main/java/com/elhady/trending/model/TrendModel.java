@@ -11,6 +11,15 @@ public class TrendModel {
     private Long stars;
     private Long forks;
     private Long currentPeriodStars;
+    private boolean expandable;
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
+    }
 
     public String getAuthor() {
         return author;

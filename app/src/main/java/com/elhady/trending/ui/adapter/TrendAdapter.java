@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -54,6 +56,9 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
         holder.forksTV.setText(trendsList.get(position).getForks()+"");
         Glide.with(context).load(trendsList.get(position).getAvatar()).into(holder.imageView);
 
+        boolean isExpandable = trendsList.get(position).isExpandable();
+        holder.expandLayout.setVisibility(isExpandable ? View.VISIBLE : View.GONE);
+
     }
 
     @Override
@@ -71,6 +76,8 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
     class TrendViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView ;
         TextView authorTV, nameTV,descriptionTV,languageTV,starsTV,forksTV;
+        ConstraintLayout constraintLayout;
+        RelativeLayout expandLayout;
         public TrendViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.img_profile);
@@ -80,6 +87,19 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
             languageTV = itemView.findViewById(R.id.language);
             starsTV = itemView.findViewById(R.id.stars);
             forksTV = itemView.findViewById(R.id.forks);
+
+            constraintLayout = itemView.findViewById(R.id.constraint_layout);
+            expandLayout = itemView.findViewById(R.id.expand_layout);
+
+            //Handling expand on item
+            constraintLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TrendModel expender = trendsList.get(getAdapterPosition());
+                    expender.setExpandable(!expender.isExpandable());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
 
         }
     }
