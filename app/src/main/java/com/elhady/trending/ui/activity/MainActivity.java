@@ -41,12 +41,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 trendViewModel.getRepository();
+                callRecyclerview();
                 refreshLayout.setRefreshing(false);
             }
         });
 
     }
 
+    // handle configuration changes (like rotation)
     private void callRecyclerview() {
         trendViewModel.trendMutableLiveData.observe(this, new Observer<List<TrendModel>>() {
             @Override
