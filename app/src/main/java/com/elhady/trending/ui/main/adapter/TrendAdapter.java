@@ -1,5 +1,6 @@
 package com.elhady.trending.ui.main.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,6 @@ import java.util.List;
 
 public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHolder> {
 
-    public void setTrendsList(ArrayList<TrendModel> trendsList) {
-        this.trendsList = trendsList;
-        notifyDataSetChanged();
-    }
 
     private ArrayList<TrendModel> trendsList = new ArrayList<>();
 
@@ -34,6 +31,20 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
     public void onBindViewHolder(@NonNull TrendViewHolder holder, int position) {
         holder.authorTV.setText(trendsList.get(position).getAuthor());
         holder.nameTV.setText(trendsList.get(position).getName());
+        holder.descriptionTV.setText(trendsList.get(position).getUrl());
+
+        if(trendsList.get(position).getLanguage() != null) {
+            holder.languageTV.setVisibility(View.VISIBLE);
+            //holder.itemLikes.setVisibility(View.VISIBLE);
+            holder.languageTV.setText(trendsList.get(position).getLanguage());
+            holder.languageTV.setTextColor(Color.parseColor(trendsList.get(position).getLanguageColor()));
+        } else {
+            //binding.itemLikes.setVisibility(View.GONE);
+            holder.languageTV.setVisibility(View.GONE);
+        }
+
+        holder.starsTV.setText(trendsList.get(position).getStars()+"");
+        holder.forksTV.setText(trendsList.get(position).getForks()+"");
 
     }
 
@@ -42,14 +53,23 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
         return trendsList.size();
     }
 
+    public void setTrendsList(ArrayList<TrendModel> trendsList) {
+        this.trendsList = trendsList;
+        notifyDataSetChanged();
+    }
+
 
 
     class TrendViewHolder extends RecyclerView.ViewHolder {
-        TextView authorTV, nameTV;
+        TextView authorTV, nameTV,descriptionTV,languageTV,starsTV,forksTV;
         public TrendViewHolder(@NonNull View itemView) {
             super(itemView);
             authorTV = itemView.findViewById(R.id.author);
-            nameTV = itemView.findViewById(R.id.name);
+            nameTV = itemView.findViewById(R.id.name_reposotory);
+            descriptionTV = itemView.findViewById(R.id.description);
+            languageTV = itemView.findViewById(R.id.language);
+            starsTV = itemView.findViewById(R.id.stars);
+            forksTV = itemView.findViewById(R.id.forks);
 
         }
     }

@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Trending</string>
+
+    <string name="item_date" formatted="false">%s at %s</string>
+    <string name="empty_text">No repositories found</string>
+    <string name="text_contributors">Contributors</string>
+    <string name="text_forks">forks</string>
+    <string name="text_watchers">Watchers</string>
+    <string name="text_stars">stars</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_open">Open in Browser</string>
+    <string name="btn_visit">Visit Site</string>
+
+
 </resources>
