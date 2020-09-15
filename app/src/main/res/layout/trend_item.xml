@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_large">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_profile"
             android:layout_width="@dimen/item_feed_profile_size"
             android:layout_height="@dimen/item_feed_profile_size"

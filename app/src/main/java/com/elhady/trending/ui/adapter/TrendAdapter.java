@@ -19,6 +19,8 @@ import com.elhady.trending.model.TrendModel;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHolder> {
 
     private Context context;
@@ -74,7 +76,7 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
 
 
     class TrendViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView ;
+        CircleImageView imageView ;
         TextView authorTV, nameTV,descriptionTV,languageTV,starsTV,forksTV;
         ConstraintLayout constraintLayout;
         RelativeLayout expandLayout;
