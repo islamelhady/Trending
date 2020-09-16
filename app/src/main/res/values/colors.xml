@@ -6,6 +6,8 @@
 
     <color name="ghost_white">#F9F9FB</color>
 
+    <color name="background">#dddddd</color>
+
     <color name="item_color_title">#25282B</color>
     <color name="item_color_time">#bfbfbf</color>
     <color name="item_color_desc">#ababab</color>

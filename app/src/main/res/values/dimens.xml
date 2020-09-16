@@ -5,6 +5,11 @@
     <integer name="line_width">4</integer>
     <integer name="line_speed">5</integer>
 
+    <!--place holder -->
+    <dimen name="activityPadding">16dp</dimen>
+    <dimen name="placeholderImage">60dp</dimen>
+    <dimen name="placeholderTextHeight">8dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
 
     <dimen name="padding_xxsmall">4dp</dimen>
     <dimen name="padding_xsmall">5dp</dimen>
