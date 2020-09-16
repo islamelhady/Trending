@@ -24,4 +24,5 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <include layout="@layout/error_connection"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
