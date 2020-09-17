@@ -30,9 +30,8 @@
             android:maxLines="1"
             android:paddingEnd="@dimen/margin"
             android:paddingRight="@dimen/margin"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/font_medium"
-            android:textStyle="bold"
+            android:textColor="@color/item_color_title"
+            android:textSize="@dimen/font_small"
             app:layout_constraintLeft_toRightOf="@id/img_profile"
             app:layout_constraintTop_toTopOf="@id/img_profile"
             tools:text="author author author" />
@@ -48,8 +47,8 @@
             android:layout_marginRight="@dimen/margin"
             android:fontFamily="sans-serif-condensed-medium"
             android:paddingTop="@dimen/margin_xsmall"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/font_small"
+            android:textColor="@color/item_color_title"
+            android:textSize="@dimen/font_medium"
             app:layout_constraintLeft_toRightOf="@id/img_profile"
             app:layout_constraintTop_toBottomOf="@id/author"
             tools:text="name name name name" />
@@ -73,7 +72,7 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:lineSpacingExtra="2dp"
                 android:maxLines="2"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/item_color_title"
                 android:textSize="@dimen/font_xmedium"
                 tools:text="description description description description" />
 

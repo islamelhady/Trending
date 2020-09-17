@@ -1,6 +1,8 @@
 package com.elhady.trending.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.TextViewCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -39,8 +41,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
+        mShimmerViewContainer = findViewById(R.id.shimmerFrameLayout);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView mTitle =  toolbar.findViewById(R.id.toolbar_title);
+
+        setSupportActionBar(toolbar);
+        mTitle.setText(toolbar.getTitle());
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         refreshLayout = findViewById(R.id.swipeRefreshLayout);
         errorLayout = findViewById(R.id.error_layout);
@@ -56,20 +65,24 @@ public class MainActivity extends AppCompatActivity {
         adapter = new TrendAdapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-        callRecyclerview();
-        setLoadSwipeRefresh(false);
 
+        setLoadSwipeRefresh();
+        callRecyclerview();
+        adapter.notifyDataSetChanged();
+        mShimmerViewContainer.stopShimmerAnimation();
     }
 
-    private void setLoadSwipeRefresh(boolean isSuccess) {
+    private void setLoadSwipeRefresh() {
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                mShimmerViewContainer.startShimmerAnimation();
                 trendViewModel.getRepository();
                 callRecyclerview();
-                //refreshLayout.setRefreshing(false);
-               // mShimmerViewContainer.stopShimmerAnimation();
-               // mShimmerViewContainer.setVisibility(View.GONE);
+                adapter.notifyDataSetChanged();
+                refreshLayout.setRefreshing(false);
+                mShimmerViewContainer.stopShimmerAnimation();
+
             }
         });
 

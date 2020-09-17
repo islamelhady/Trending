@@ -11,7 +11,7 @@
         android:layout_height="@dimen/placeholderImage"
         android:layout_marginRight="@dimen/activityPadding"
         android:layout_marginTop="@dimen/padding_10"
-        android:background="@color/background"
+        android:background="@drawable/circle_shape"
         />
 
     <LinearLayout

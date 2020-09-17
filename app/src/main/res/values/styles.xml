@@ -7,5 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Toolbar.TitelText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">21dp</item>
+    </style>
 
 </resources>
