@@ -1,5 +1,6 @@
 package com.elhady.trending.ui.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.TextViewCompat;
@@ -10,11 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.elhady.trending.OnClickError;
 import com.elhady.trending.R;
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mShimmerViewContainer = findViewById(R.id.shimmerFrameLayout);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView mTitle =  toolbar.findViewById(R.id.toolbar_title);
+        TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
 
         setSupportActionBar(toolbar);
         mTitle.setText(toolbar.getTitle());
@@ -124,5 +129,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         mShimmerViewContainer.stopShimmerAnimation();
         super.onPause();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_start:
+                Toast.makeText(this, "Start", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menu_name:
+                Toast.makeText(this, "NAME", Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return false;
     }
 }
