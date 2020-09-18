@@ -9,7 +9,7 @@
     <dimen name="activityPadding">16dp</dimen>
     <dimen name="placeholderImage">32dp</dimen>
     <dimen name="placeholderTextHeight">8dp</dimen>
-    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
 
     <dimen name="padding_xxsmall">4dp</dimen>
     <dimen name="padding_xsmall">5dp</dimen>
@@ -17,6 +17,13 @@
 
     <dimen name="padding">10dp</dimen>
     <dimen name="padding_xmedium">11dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="thumbnail">40dp</dimen>
+    <dimen name="row_padding">10dp</dimen>
+    <dimen name="contact_name">15dp</dimen>
+    <dimen name="contact_number">12dp</dimen>
 
 
     <dimen name="padding_small_medium">12dp</dimen>
@@ -34,7 +41,7 @@
     <dimen name="margin_xsmall">3dp</dimen>
     <dimen name="margin_small">5dp</dimen>
     <dimen name="margin_small_medium">8dp</dimen>
-    <dimen name="margin">10dp</dimen>
+    <dimen name="margin">16dp</dimen>
     <dimen name="margin_large">15dp</dimen>
     <dimen name="margin_medium">13dp</dimen>
     <dimen name="margin_xlarge">20dp</dimen>
