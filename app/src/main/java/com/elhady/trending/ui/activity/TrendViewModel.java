@@ -1,5 +1,7 @@
 package com.elhady.trending.ui.activity;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -15,12 +17,8 @@ import retrofit2.Response;
 
 public class TrendViewModel extends ViewModel {
     MutableLiveData <List<TrendModel>> trendMutableLiveData = new MutableLiveData<>();
+    final static String TAG = "error";
 
-    OnClickError onClickError;
-
-    public void setOnClickError(OnClickError onClickError) {
-        this.onClickError = onClickError;
-    }
 
     public void getRepository(){
         TrendClient.getINSTANCE().getTrending().enqueue(new Callback<List<TrendModel>>() {
@@ -35,6 +33,7 @@ public class TrendViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<List<TrendModel>> call, Throwable t) {
+                Log.d(TAG,"islam error" + t);
 
             }
         });

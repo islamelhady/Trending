@@ -1,6 +1,7 @@
 package com.elhady.trending.ui.adapter;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -72,7 +74,6 @@ public class TrendAdapter extends RecyclerView.Adapter<TrendAdapter.TrendViewHol
         this.trendsList = trendsList;
         notifyDataSetChanged();
     }
-
 
 
     class TrendViewHolder extends RecyclerView.ViewHolder {

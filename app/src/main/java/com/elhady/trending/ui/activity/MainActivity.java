@@ -2,6 +2,7 @@ package com.elhady.trending.ui.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.TextViewCompat;
 import androidx.lifecycle.Observer;
@@ -69,9 +70,8 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = findViewById(R.id.recycler_view);
         adapter = new TrendAdapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
 
-        setLoadSwipeRefresh();
         callRecyclerview();
         adapter.notifyDataSetChanged();
         mShimmerViewContainer.stopShimmerAnimation();
@@ -101,18 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setTrendsList((ArrayList<TrendModel>) trendModels);
             }
         });
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mShimmerViewContainer.startShimmerAnimation();
-    }
-
-    @Override
-    protected void onPause() {
-        mShimmerViewContainer.stopShimmerAnimation();
-        super.onPause();
     }
 
     @Override
