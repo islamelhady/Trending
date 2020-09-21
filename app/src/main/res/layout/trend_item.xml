@@ -15,7 +15,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -82,30 +82,45 @@
 
             <TextView
                 android:id="@+id/stars"
-                android:drawableLeft="@drawable/ic_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/description"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
                 android:layout_toRightOf="@id/language"
+                android:drawableLeft="@drawable/ic_star"
                 android:drawablePadding="4dp"
                 tools:text="stars 14.876" />
 
 
             <TextView
                 android:id="@+id/forks"
-                android:drawableLeft="@drawable/ic_fork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/description"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_toRightOf="@id/stars"
-                android:layout_marginLeft="16dp"
                 android:drawablePadding="4dp"
-                tools:text="forks 67.76" />
+                tools:text="forks 67.76"
+                app:drawableStartCompat="@drawable/ic_fork" />
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/background" />
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
