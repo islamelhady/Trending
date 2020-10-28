@@ -1,8 +1,5 @@
 package com.elhady.trending.ui.activity;
 
-import android.content.Context;
-import android.widget.Toast;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 

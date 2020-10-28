@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = findViewById(R.id.recycler_view);
         adapter = new TrendAdapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+//        recyclerView.setAdapter(adapter);
 
         setLoadSwipeRefresh();
         callRecyclerview();
@@ -103,22 +103,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //    public void showErrorConnection(int imageView, String title, String message){
-//        if (errorLayout.getVisibility() == View.GONE)
-//            errorLayout.setVisibility(View.VISIBLE);
-//
-//        errorImg.setImageResource(imageView);
-//        errorTitle.setText(title);
-//        errorMessage.setText(message);
-//
-//        btnRetry.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                setLoadSwipeRefresh();
-//            }
-//        });
-//
-//    }
     @Override
     public void onResume() {
         super.onResume();
