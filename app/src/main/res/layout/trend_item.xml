@@ -32,7 +32,7 @@
             tools:text="author author author" />
 
         <TextView
-            android:id="@+id/name_reposotory"
+            android:id="@+id/name_repository"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -52,7 +52,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_reposotory">
+            app:layout_constraintTop_toBottomOf="@id/name_repository">
 
 
             <TextView
@@ -95,7 +95,7 @@
 
 
             <TextView
-                android:id="@+id/forks"
+                android:id="@+id/licenseView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/description"
@@ -104,7 +104,7 @@
                 android:layout_toRightOf="@id/stars"
                 android:drawablePadding="4dp"
                 tools:text="forks 67.76"
-                app:drawableStartCompat="@drawable/ic_fork" />
+                app:drawableStartCompat="@drawable/ic_license" />
 
         </RelativeLayout>
 
