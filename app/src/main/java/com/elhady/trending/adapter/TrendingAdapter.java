@@ -1,6 +1,5 @@
 package com.elhady.trending.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TrendingAdapter extends RecyclerView.Adapter<TrendingAdapter.TrendViewHolder> {
 
-    private Context context;
     private static List<ItemModel> itemModels = new ArrayList<>();
 
     public TrendingAdapter() {
@@ -55,7 +53,7 @@ public class TrendingAdapter extends RecyclerView.Adapter<TrendingAdapter.TrendV
 
     @Override
     public int getItemCount() {
-        return itemModels.size();
+        return (itemModels == null ? 0 : itemModels.size());
     }
 
 

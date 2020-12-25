@@ -19,6 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Util {
+    public static int page = 1;
     private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public static String getFormattedDateOneMonthAgo(){

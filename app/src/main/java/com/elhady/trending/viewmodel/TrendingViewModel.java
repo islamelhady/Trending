@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.elhady.trending.model.ItemModel;
 import com.elhady.trending.repository.Repository;
+import com.elhady.trending.util.Util;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,6 @@ public class TrendingViewModel extends ViewModel {
     private MutableLiveData<Boolean> error = new MutableLiveData<>();
     private static Map<String, String> map = new HashMap<>();
     private CompositeDisposable disposable = new CompositeDisposable();
-    private int PAGE_COUNT = 1;
 
 
     @ViewModelInject
@@ -50,7 +50,7 @@ public class TrendingViewModel extends ViewModel {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result->reposList.setValue(result.getItems()),
-                        error-> Log.e(TAG, "getPopularMovies: " + error.getMessage() ))
+                        error-> Log.e(TAG, "getTrendingRepository: " + error.getMessage() ))
         );
     }
 
@@ -59,7 +59,7 @@ public class TrendingViewModel extends ViewModel {
         map.put("q","created:>");
         map.put("sort","stars");
         map.put("order","desc");
-        map.put("page",String.valueOf(PAGE_COUNT));
+        map.put("page",String.valueOf(Util.page));
     }
 
     public void onClear(){

@@ -41,11 +41,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private SwipeRefreshLayout swipeRefreshLayout;
     private ShimmerFrameLayout shimmerFrameLayout;
     private CoordinatorLayout coordinatorLayout;
-    private int PAGE_COUNT = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -67,26 +66,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         initView();
         observeData();
-        getTrendingList();
+        loadTrendingList();
         setUpRecyclerView();
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         observeData();
-        viewModel.getError().observe(this, isError -> {
-            if (isError) {
-                displaySnackBar(true, "Can't load more Github Repository");
-                updateRefreshLayout(false);
-                shimmerFrameLayout.stopShimmerAnimation();
-                shimmerFrameLayout.setVisibility(View.GONE);
-            }
-        });
+        errorData();
 
         updateRefreshLayout(true);
         displaySnackBar(false, "Trending Github");
-        getTrendingList();
+        loadTrendingList();
     }
 
     private void initView() {
@@ -108,7 +100,18 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         });
     }
 
-    private void getTrendingList() {
+    private void errorData(){
+        viewModel.getError().observe(this, isError -> {
+            if (isError) {
+                displaySnackBar(true, "Can't load more Github Repository");
+                updateRefreshLayout(false);
+                shimmerFrameLayout.stopShimmerAnimation();
+                shimmerFrameLayout.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private void loadTrendingList() {
         viewModel.loadTrendingList(Util.getFormattedDateOneMonthAgo());
     }
 
@@ -121,10 +124,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onRefresh() {
+        Util.page = 1;
         adapter.clearData();
         if (Util.isNetworkAvailable(this)) {
-            displaySnackBar(false, "Loading...");
-            getTrendingList();
+            loadTrendingList();
         } else {
             updateRefreshLayout(false);
             showError();
@@ -163,5 +166,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 return true;
         }
         return false;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        viewModel.onClear();
     }
 }
