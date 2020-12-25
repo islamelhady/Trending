@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         viewModel = new ViewModelProvider(this).get(TrendingViewModel.class);
 
         initView();
-        observeData();
-        loadTrendingList();
         setUpRecyclerView();
     }
 
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         errorData();
 
         updateRefreshLayout(true);
-        displaySnackBar(false, "Trending Github");
+        displaySnackBar(false, "Loading...");
         loadTrendingList();
     }
 

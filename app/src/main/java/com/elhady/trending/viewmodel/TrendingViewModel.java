@@ -1,12 +1,12 @@
 package com.elhady.trending.viewmodel;
 
-import android.util.Log;
 
 import androidx.hilt.lifecycle.ViewModelInject;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.elhady.trending.model.ItemModel;
+import com.elhady.trending.model.RepoModel;
 import com.elhady.trending.repository.Repository;
 import com.elhady.trending.util.Util;
 
@@ -49,8 +49,14 @@ public class TrendingViewModel extends ViewModel {
         disposable.add(repository.getTrending(map)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(result->reposList.setValue(result.getItems()),
-                        error-> Log.e(TAG, "getTrendingRepository: " + error.getMessage() ))
+                .map(RepoModel::getItems)
+                .subscribe(itemModels -> {
+                            if(itemModels !=null && !itemModels.isEmpty()){
+                                reposList.postValue(itemModels);
+                                error.postValue(false);
+                            }
+                        }, error -> this.error.postValue(true)
+                )
         );
     }
 
