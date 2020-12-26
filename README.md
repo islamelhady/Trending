@@ -12,7 +12,7 @@ Github Trending
 |:-:|:-:|:-:|
 | ![Fist](screen/screen1.png?raw=true) | ![3](screen/screen2.png?raw=true) | ![3](screen/screen3.png?raw=true) |
 | Item Expanded | Menus |   Error State |
-| ![4](screen/screen4.jpg?raw=true) | ![5](screen/screen5.png?raw=true) | ![6](screen/screen6.png?raw=true) |
+| ![4](screen/screen4.png?raw=true) | ![5](screen/screen5.png?raw=true) | ![6](screen/screen6.png?raw=true) |
 
 ## 🌟 Features
 *   The app should fetch the trending repositories from the provided public API and display it to the users.
