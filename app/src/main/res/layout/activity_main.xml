@@ -1,69 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main_layout"
-    tools:context=".ui.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+    <data>
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar" />
+    </data>
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmerFrameLayout"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:duration="800"
-        android:background="@color/colorPrimary"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        tools:context=".ui.MainActivity">
 
-        <!--     Adding 15 rows of placeholders -->
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-            <include layout="@layout/data_place_holder" />
-        </LinearLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/design_default_color_on_primary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Trending"
+                    android:textAppearance="@style/Toolbar.TitelText" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+<!--            <include-->
+<!--                android:id="@+id/toolbar"-->
+<!--                layout="@layout/toolbar" />-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:orientation="vertical"
+            app:duration="800"
+            android:background="@color/colorPrimary"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <!--     Adding 15 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+
+                <include layout="@layout/data_place_holder" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,72 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/error_layout">
-    <FrameLayout
-        android:id="@+id/sample_content_fragment"
-        android:layout_weight="2"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0px" >
+        android:layout_height="match_parent"
+        android:id="@+id/error_layout">
 
-        <RelativeLayout
-            android:id="@+id/error_connect"
+        <FrameLayout
+            android:id="@+id/sample_content_fragment"
+            android:layout_weight="2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible">
+            android:layout_height="0px">
 
-            <ImageView
-                android:id="@+id/error_img"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="60dp"
-                android:src="@drawable/no_internet_connection" />
-
-            <TextView
-                android:id="@+id/erorr_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/error_img"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:text="Something went wrong.."
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/erorr_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/erorr_title"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:text="An alien probably blocking your signal"
-                android:textSize="18sp"
-                android:textStyle="normal" />
-
-            <Button
-                android:id="@+id/btn_retry"
+            <RelativeLayout
+                android:id="@+id/error_connect"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/button_shape"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="#31B057"
-                android:typeface="serif"
-                android:textSize="17sp"
-                android:text="Retry" />
+                android:layout_height="match_parent"
+                android:visibility="visible">
 
-        </RelativeLayout>
-    </FrameLayout>
+                <ImageView
+                    android:id="@+id/error_img"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/no_internet_connection" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/erorr_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/error_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="Something went wrong.."
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/erorr_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/erorr_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="An alien probably blocking your signal"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/btn_retry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/button_shape"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="#31B057"
+                    android:typeface="serif"
+                    android:textSize="17sp"
+                    android:text="Retry" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>
