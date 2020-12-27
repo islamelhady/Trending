@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
@@ -33,11 +29,6 @@
                     android:layout_gravity="center"
                     android:text="Trending"
                     android:textAppearance="@style/Toolbar.TitelText" />
-
-<!--            <include-->
-<!--                android:id="@+id/toolbar"-->
-<!--                layout="@layout/toolbar" />-->
-
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>

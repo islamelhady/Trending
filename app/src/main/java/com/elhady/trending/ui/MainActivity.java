@@ -3,13 +3,11 @@ package com.elhady.trending.ui;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +15,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.TextView;
 
 import com.elhady.trending.databinding.ActivityMainBinding;
 import com.elhady.trending.util.Util;
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         errorData();
 
         updateRefreshLayout(true);
-        displaySnackBar(false, "Loading...");
+//        displaySnackBar(false, "Loading...");
         loadTrendingList();
     }
 
@@ -101,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
     private void setUpRecyclerView() {
-        adapter = new TrendingAdapter();
+        adapter = new TrendingAdapter(this);
         binding.recyclerView.setAdapter(adapter);
     }
 
@@ -114,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             loadTrendingList();
         } else {
             updateRefreshLayout(false);
-            showError();
+            observeData();
             displaySnackBar(true, "No Internet Connection ");
         }
     }
@@ -123,10 +120,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         binding.swipeRefreshLayout.setRefreshing(refresh);
     }
 
-    private void showError() {
-        startActivity(new Intent(MainActivity.this, ConnectionError.class));
-        finish();
-    }
 
     private void displaySnackBar(boolean isError, String message) {
         Util.showSnack(binding.mainLayout, isError, message);

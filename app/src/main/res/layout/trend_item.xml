@@ -1,128 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_layout"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_profile"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_launcher_background"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/author"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/img_profile"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="author author author" />
-
-        <TextView
-            android:id="@+id/name_repository"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/item_color_title"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/expand_layout"
-            app:layout_constraintStart_toEndOf="@+id/img_profile"
-            app:layout_constraintTop_toBottomOf="@+id/author"
-            tools:text="name name name name" />
-
-        <RelativeLayout
-            android:id="@+id/expand_layout"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name_repository">
+            android:layout_height="wrap_content">
 
-
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="66dp"
-                android:textColor="@color/item_color_title"
-                android:textSize="@dimen/font_xmedium"
-                tools:text="description description description description" />
-
-            <TextView
-                android:id="@+id/language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/description"
-                android:layout_alignStart="@+id/description"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="66dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:drawableLeft="@drawable/ic_circle"
-                android:drawablePadding="5dp"
-                tools:text="C++" />
-
-
-            <TextView
-                android:id="@+id/stars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/description"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:layout_toRightOf="@id/language"
-                android:drawableLeft="@drawable/ic_star"
-                android:drawablePadding="4dp"
-                tools:text="stars 14.876" />
-
-
-            <TextView
-                android:id="@+id/licenseView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/description"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@id/stars"
-                android:drawablePadding="4dp"
-                tools:text="forks 67.76"
-                app:drawableStartCompat="@drawable/ic_license" />
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp">
-
-            <View
-                android:id="@+id/view"
+            <TextView
+                android:id="@+id/author"
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="@color/background" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/img_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="author author author" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/name_repository"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/item_color_title"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/expand_layout"
+                app:layout_constraintStart_toEndOf="@+id/img_profile"
+                app:layout_constraintTop_toBottomOf="@+id/author"
+                tools:text="name name name name" />
 
-</androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:id="@+id/expand_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_repository">
+
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="66dp"
+                    android:textColor="@color/item_color_title"
+                    android:textSize="@dimen/font_xmedium"
+                    tools:text="description description description description" />
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:layout_alignStart="@+id/description"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="66dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:drawableLeft="@drawable/ic_circle"
+                    android:drawablePadding="5dp"
+                    tools:text="C++" />
+
+
+                <TextView
+                    android:id="@+id/stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/description"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_toRightOf="@id/language"
+                    android:drawableLeft="@drawable/ic_star"
+                    android:drawablePadding="4dp"
+                    tools:text="stars 14.876" />
+
+
+                <TextView
+                    android:id="@+id/licenseView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/description"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/stars"
+                    android:drawablePadding="4dp"
+                    tools:text="forks 67.76"
+                    app:drawableStartCompat="@drawable/ic_license" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:background="@color/background" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
