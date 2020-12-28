@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         binding.toolbarTitle.setText(binding.toolbar.getTitle());
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
         viewModel = new ViewModelProvider(this).get(TrendingViewModel.class);
 
         initView();
@@ -59,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         errorData();
 
         updateRefreshLayout(true);
-//        displaySnackBar(false, "Loading...");
         loadTrendingList();
     }
 
