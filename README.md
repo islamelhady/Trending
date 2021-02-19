@@ -1,5 +1,5 @@
 # 🚀 Trending
-Github Trending 
+Github Trending app that shows the list of trending repositories on GitHub, starting from the most popular ones.
 
 ## ✨ Demo 
 
